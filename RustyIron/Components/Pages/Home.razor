@@ -1,0 +1,20 @@
+﻿@page "/"
+@rendermode InteractiveServer
+@using IronWord
+@using IronWord.Models
+@using IronSoftware.Drawing
+
+<PageTitle>Home</PageTitle>
+
+<h1>Iron Rusts</h1>
+
+
+<button class="btn btn-primary" @onclick="OpenWordDocument">Open Document</button>
+
+@code {
+    private void OpenWordDocument()
+    {
+        License.LicenseKey = "IRONSUITE.CHARLIE.GENEST.ORG.15840-DA260865B2-DST2GMO7WFSXF7-GFDVVY37OYRV-IQXIVOKX2JQP-3QUQIZ27KVHU-ZCHOPGM572NP-VKELTRHBGNNO-NLJF7I-TQJUILUHWTWOEA-DEPLOYMENT.TRIAL-ODELLU.TRIAL.EXPIRES.05.JAN.2025";
+        WordDocument document = new WordDocument(@"C:\tmp\MyFile.docx");
+    }
+}
